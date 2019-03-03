@@ -77,11 +77,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="row">
         <div class="col-sm-3 well">
             <div class="well">
-                <p><a href="profile.php">My Profile</a></p>
+                <p><a href="profile.php"><?php echo $user_data->username;?></a></p>
                 <img src="assets/images/profilepic.png" class="img-circle" height="65" width="65" alt="Avatar">
-                <p style="text-align: left"><b> User Name: <?php echo $user_data->username;?></b></p>
-                <p style="text-align: left"><b> User ID: <?php echo $user_data->user_id;?></b></p>
                 <p style="text-align: left"><b> Followers: <?php echo $user_data->fan_count;?></b></p>
+                 <p style="text-align: left"><b> Following: <?php echo $user_data->idol_count;?></b></p>
             </div>
 <!--            <div class="well">-->
 <!--                <p><a href="#">Interests</a></p>-->
