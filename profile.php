@@ -66,10 +66,15 @@ else if(isset($_SESSION['user_id'])) {
                     <br>
                     <img src="data:image/jpeg;base64,<?php echo $user_data->profile_image; ?>" height="100"
                          width="100" alt="Profile Photo"/>
+                         
+                    <?php
+                    if (!(isset($_GET['id']))){
 
-                    <form method="post" enctype="multipart/form-data">
-                        <input type="file" name="image" id="image"/>
-                        <input type="submit" value="Upload" name="image_submit" id="image-upload"/>
+                    echo '<form method="post" enctype="multipart/form-data">';
+                        echo  '<input type="file" name="image" id="image"/>';
+                        echo '<input type="submit" value="Upload" name="image_submit" id="image-upload"/>';
+                    }
+                    ?>
                 </div>
                 <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
                     <div class="container">
@@ -90,7 +95,11 @@ else if(isset($_SESSION['user_id'])) {
                     <hr>
 
                     <div class="col-sm-5 col-xs-6 tital ">
-                        <button type="submit" name="follow" class="btn btn-success">Follow</button>
+                        <?php
+                        if (isset($_GET['id'])){
+                        echo '<button type="submit" name="follow" class="btn btn-success">Follow</button>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
